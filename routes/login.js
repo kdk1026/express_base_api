@@ -9,14 +9,6 @@ const mybatisMapper = require('mybatis-mapper');
 
 mybatisMapper.createMapper(['./mappers/userMapper.xml']);
 
-router.get('/', function(req, res, next) {
-    const obj = {};
-    obj.test = '1234';
-    obj.profile = process.env.profile;
-
-    res.json(obj);
-});
-
 router.post('/auth', function(req, res, next) {
     const { userId, userPw } = req.body;
 
