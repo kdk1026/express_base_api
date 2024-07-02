@@ -51,8 +51,7 @@ router.post('/auth', function(req, res, next) {
 
                 res.cookie('refreshToken', refreshToken, {
                     expires: new Date(Date.now() + (refreshTokenExpireMin*60*1000)),
-                    httpOnly: true,
-                    sameSite: false
+                    httpOnly: true
                 });
 
                 let tokenType = process.env.jwt_token_type;
